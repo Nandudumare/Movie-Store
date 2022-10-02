@@ -9,6 +9,10 @@ import styles from "./Trending.module.css";
 const Trending = () => {
   let [data, setData] = useState([]);
   const [page, setPage] = useState(1);
+
+  useLayoutEffect(() => {
+    window.scroll(0, 0);
+  }, []);
   const fetchData = async () => {
     try {
       let { data } = await axios.get(

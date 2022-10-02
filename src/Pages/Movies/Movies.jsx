@@ -1,5 +1,5 @@
 import axios from "axios";
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useLayoutEffect, useState } from "react";
 import Genres from "../../Components/Genres";
 import CustomPagination from "../../Components/Pagination/CustomPagination";
 import SingleContent from "../../Components/SingleContent/SingleContent";
@@ -13,6 +13,11 @@ const Movies = () => {
   const [selectedGenres, setSelectedGenres] = useState([]);
   const [genres, setGenres] = useState([]);
   const genreforURL = useGenre(selectedGenres);
+  useLayoutEffect(() => {
+    window.scroll(0,0)
+  },[])
+
+
   const fetchData = async () => {
     try {
       let { data } = await axios.get(

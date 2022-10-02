@@ -1,5 +1,8 @@
 @import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@100&display=swap");
 
+*{
+  scroll-behavior: smooth;
+}
 
 body {
   margin: 0;
@@ -13,4 +16,26 @@ body {
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
+}
+
+#\:r3\:-label{
+  color: white;
+}
+
+#\:r3\:{
+  color:white
+}
+
+#root > div.app > div > div > div.MuiTabs-root.css-1ujnqem-MuiTabs-root > div > div > button.MuiButtonBase-root.MuiTab-root.MuiTab-textColorPrimary.Mui-selected.css-1h9z7r5-MuiButtonBase-root-MuiTab-root{
+  color: white;
+}
+
+#root > div.app > div > div > div.MuiTabs-root.css-1ujnqem-MuiTabs-root > div > div > button{
+  color: white;
+}
+#root > div.app > div > div > div > nav > ul > li > button{
+  color: white;
+}
+#root > div.app > div > div > div > nav > ul > li > div{
+  color: white;
 }

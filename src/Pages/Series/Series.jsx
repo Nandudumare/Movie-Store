@@ -1,11 +1,73 @@
-import React from 'react'
+import axios from "axios";
+import React, { useEffect, useLayoutEffect, useState } from "react";
+import Genres from "../../Components/Genres";
+import CustomPagination from "../../Components/Pagination/CustomPagination";
+import SingleContent from "../../Components/SingleContent/SingleContent";
+import useGenre from "../../Hooks/useGenre";
+import styles from "../Trending/Trending.module.css";
 
 const Series = () => {
+  let [data, setData] = useState([]);
+  const [page, setPage] = useState(1);
+  const [numOfPages, setNumOfPages] = useState();
+  const [selectedGenres, setSelectedGenres] = useState([]);
+  const [genres, setGenres] = useState([]);
+  const genreforURL = useGenre(selectedGenres);
+
+  useLayoutEffect(() => {
+    window.scroll(0,0)
+  },[])
+
+  const fetchData = async () => {
+    try {
+      let { data } = await axios.get(
+        `https://api.themoviedb.org/3/discover/tv?api_key=${process.env.REACT_APP_API_KEY}&language=en-US&sort_by=popularity.desc&include_adult=false&include_video=false&page=${page}&with_genres=${genreforURL}`
+      );
+      setData([...data.results]);
+      setNumOfPages(data.total_pages);
+    } catch (err) {}
+  };
+
+  useEffect(() => {
+    fetchData();
+  }, [page, selectedGenres]);
+
   return (
     <div>
       <span className="pageTitle">Series</span>
+      <Genres
+        type="tv"
+        genres={genres}
+        setGenres={setGenres}
+        selectedGenres={selectedGenres}
+        setSelectedGenres={setSelectedGenres}
+        setPage={setPage}
+      />
+      <div className={styles.trending}>
+        {data &&
+          data.map((element) => {
+            return (
+              <SingleContent
+                key={element.id}
+                id={element.id}
+                poster={element.poster_path}
+                title={element.title || element.name}
+                date={element.first_air_date || element.release_date}
+                media_type={"tv"}
+                vote_average={element.vote_average}
+              />
+            );
+          })}
+      </div>
+      {numOfPages > 1 && (
+        <CustomPagination
+          setPage={setPage}
+          page={page}
+          numOfPages={numOfPages}
+        />
+      )}
     </div>
-  )
-}
+  );
+};
 
-export default Series
+export default Series;
