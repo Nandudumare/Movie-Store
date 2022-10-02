@@ -1,5 +1,7 @@
 import { Badge } from "@mui/material";
 import React from "react";
+import { AnimationOnScroll } from "react-animation-on-scroll";
+
 import { img_300, unavailable } from "../../config/config.js";
 import styles from "./SingleContent.module.css";
 const SingleContent = ({
@@ -11,6 +13,7 @@ const SingleContent = ({
   vote_average,
 }) => {
   return (
+    // <AnimationOnScroll animateIn="animate__fadeInRightBig">
     <div className={styles.media}>
       <Badge
         badgeContent={vote_average}
@@ -28,6 +31,7 @@ const SingleContent = ({
         <span className={styles.subTitle}>{date}</span>
       </span>
     </div>
+    // </AnimationOnScroll>
   );
 };
 

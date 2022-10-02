@@ -1,5 +1,7 @@
 import axios from "axios";
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useLayoutEffect, useState } from "react";
+import { AnimationOnScroll } from "react-animation-on-scroll";
+
 import CustomPagination from "../../Components/Pagination/CustomPagination";
 import SingleContent from "../../Components/SingleContent/SingleContent";
 import styles from "./Trending.module.css";
@@ -12,7 +14,6 @@ const Trending = () => {
       let { data } = await axios.get(
         `https://api.themoviedb.org/3/trending/all/day?api_key=${process.env.REACT_APP_API_KEY}&page=${page}`
       );
-
       setData([...data.results]);
     } catch (err) {}
   };
@@ -40,6 +41,7 @@ const Trending = () => {
             );
           })}
       </div>
+
       <CustomPagination setPage={setPage} page={page} />
     </div>
   );

@@ -1,21 +1,12 @@
-import { createTheme, Pagination, ThemeProvider } from "@mui/material";
-import { red } from "@mui/material/colors";
+import { Pagination } from "@mui/material";
 import React from "react";
 
-// const darkTheme = createTheme({
-//   palette: {
-//     type: "light",
-//     primary: {
-//       main: red[500],
-//     },
-//   },
-// });
-
-const CustomPagination = ({ page, setPage }) => {
-  const handlePageChange = (page) => {
+const CustomPagination = ({ page, setPage, numOfPages }) => {
+  const handlePageChange = (event, page) => {
     setPage(page);
     window.scroll(0, 0);
   };
+
   return (
     <div
       style={{
@@ -26,9 +17,10 @@ const CustomPagination = ({ page, setPage }) => {
       }}
     >
       <Pagination
-        onChange={(e) => handlePageChange(e.target.textContent)}
-        count={10}
+        onChange={handlePageChange}
+        count={numOfPages ? (numOfPages <= 500 ? numOfPages : 500) : 10}
         color="primary"
+        page={page}
       />
     </div>
   );
