@@ -3,6 +3,7 @@ import React from "react";
 import { AnimationOnScroll } from "react-animation-on-scroll";
 
 import { img_300, unavailable } from "../../config/config.js";
+import ContentModal from "../ContentModal/ContentModal.jsx";
 import styles from "./SingleContent.module.css";
 const SingleContent = ({
   id,
@@ -14,7 +15,7 @@ const SingleContent = ({
 }) => {
   return (
     // <AnimationOnScroll animateIn="animate__fadeInRightBig">
-    <div className={styles.media}>
+    <ContentModal media_type={media_type} id={id}>
       <Badge
         badgeContent={vote_average}
         color={vote_average > 6 ? "primary" : "secondary"}
@@ -30,7 +31,7 @@ const SingleContent = ({
 
         <span className={styles.subTitle}>{date}</span>
       </span>
-    </div>
+    </ContentModal>
     // </AnimationOnScroll>
   );
 };
