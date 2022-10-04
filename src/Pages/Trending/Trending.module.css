@@ -6,3 +6,17 @@
     justify-content: space-around;
   }
 
+
+  @media (max-width:550px) {
+    .trending {
+      display: flex;
+      /* flex-wrap: wrap; */
+      /* justify-content: space-around; */
+      flex-direction: column;
+      justify-content:center;
+      align-items:center;
+      margin:auto;
+      
+      overflow-x: hidden
+    }
+  }
