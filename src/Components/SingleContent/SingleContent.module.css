@@ -1,6 +1,7 @@
 .media {
     display: flex;
     flex-direction: column;
+    position: relative;
     width: 200px;
     padding: 5px;
     margin: 5px 0;
@@ -8,7 +9,6 @@
     /* justify-content:space-between; */
     /* background-color: #2e539f; */
     /* border-radius: 10px; */
-    position: relative;
     font-family: "Montserrat", sans-serif;
     background: rgba( 255, 255, 255, 0.1 );
     box-shadow: 0 8px 32px 0 rgba( 31, 38, 135, 0.37 );
@@ -16,6 +16,8 @@
     -webkit-backdrop-filter: blur( 4.5px );
     border-radius: 10px;
     border: 1px solid rgba( 255, 255, 255, 0.18 );
+    height:380px;
+ 
   }
   
   .media:hover {
@@ -31,6 +33,7 @@
   @media (max-width: 550px) {
     .media {
       width: 46%;
+      height:auto;
     }
   }
   

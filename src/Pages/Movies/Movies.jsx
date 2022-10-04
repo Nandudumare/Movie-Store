@@ -14,9 +14,8 @@ const Movies = () => {
   const [genres, setGenres] = useState([]);
   const genreforURL = useGenre(selectedGenres);
   useLayoutEffect(() => {
-    window.scroll(0,0)
-  },[])
-
+    window.scroll(0, 0);
+  }, []);
 
   const fetchData = async () => {
     try {
@@ -53,7 +52,7 @@ const Movies = () => {
                 poster={element.poster_path}
                 title={element.title || element.name}
                 date={element.first_air_date || element.release_date}
-                media_type={"Movie"}
+                media_type={"movie"}
                 vote_average={element.vote_average}
               />
             );
