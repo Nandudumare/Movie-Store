@@ -1,7 +1,30 @@
 import { Chip } from "@mui/material";
 import axios from "axios";
-import React, { useEffect } from "react";
+import React, { useEffect, useState } from "react";
+import {
+  bounce,
+  flip,
+  rollIn,
+  rubberBand,
+  wobble,
+  zoomIn,
+  zoomInDown,
+  zoomInUp,
+  zoomOut,
+  zoomOutUp,
+} from "react-animations";
+import { StyleSheet, css } from "aphrodite";
 
+const styless = StyleSheet.create({
+  zoomOut: {
+    animationName: zoomOut,
+    animationDuration: "1s",
+  },
+  zoomIn: {
+    animationName: zoomIn,
+    animationDuration: "1s",
+  },
+});
 const Genres = ({
   type,
   setPage,
@@ -38,10 +61,11 @@ const Genres = ({
       setGenres([]);
     };
   }, []);
+
   return (
     <div style={{ padding: "6px 0" }}>
       {selectedGenres &&
-        selectedGenres.map((el) => {
+        selectedGenres.map((el, index) => {
           return (
             <Chip
               label={el.name}
@@ -49,14 +73,13 @@ const Genres = ({
               variant="outlined"
               style={{ margin: 2 }}
               clickable
-              // size="small"
               key={el.id}
               onDelete={() => handleRemove(el)}
             />
           );
         })}
       {genres &&
-        genres.map((el) => {
+        genres.map((el, index) => {
           return (
             <Chip
               label={el.name}
@@ -64,9 +87,10 @@ const Genres = ({
               variant="outlined"
               style={{ margin: 2 }}
               clickable
-              // size="small"
               key={el.id}
-              onClick={() => handleAdd(el)}
+              onClick={() => {
+                handleAdd(el);
+              }}
             />
           );
         })}

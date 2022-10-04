@@ -1,6 +1,6 @@
 import axios from "axios";
 import React, { useEffect, useLayoutEffect, useState } from "react";
-import { AnimationOnScroll } from "react-animation-on-scroll";
+// import { AnimationOnScroll } from "react-animation-on-scroll";
 
 import CustomPagination from "../../Components/Pagination/CustomPagination";
 import SingleContent from "../../Components/SingleContent/SingleContent";

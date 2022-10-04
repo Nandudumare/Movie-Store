@@ -39,3 +39,7 @@ code {
 #root > div.app > div > div > div > nav > ul > li > div{
   color: white;
 }
+
+body > div.MuiModal-root.css-79ws1d-MuiModal-root > div:nth-child(3) > div > div > a{
+  margin-bottom: 1rem;
+}

@@ -4,21 +4,13 @@
 
 .app {
   min-height: 100vh;
-  /* background: #39445a; */
-  /* background-image: radial-gradient( circle 610px at 5.2% 51.6%,  rgba(5,8,114,1) 0%, rgba(7,3,53,1) 97.5% ); */
-  /* background-image: linear-gradient(to top, #30cfd0 0%, #330867 100%); */
-  /* background-image: radial-gradient( circle farthest-corner at 7.2% 13.6%,  rgba(37,249,245,1) 0%, rgba(8,70,218,1) 90% ); */
-  
-  /* background: #16222A;  
-  background: -webkit-linear-gradient(to right, #3A6073, #16222A);  
-  background: linear-gradient(to right, #3A6073, #16222A); */
 
-  background: #536976;  /* fallback for old browsers */
-  background: -webkit-linear-gradient(to right, #292E49, #536976);  /* Chrome 10-25, Safari 5.1-6 */
-  background: linear-gradient(to right, #292E49, #536976); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
-
-
-
+/* 
+  background: #536976;  
+  background: -webkit-linear-gradient(to right, #292E49, #536976); 
+  background: linear-gradient(to right, #292E49, #536976); */
+  /* background-image: radial-gradient( circle farthest-corner at 10% 20%,  rgba(0,52,89,1) 0%, rgba(0,168,232,1) 90% ); */
+  background-image: linear-gradient(to top, #628eff 0%, #330867 100%);
   color: white;
   padding-top: 80px;
   padding-bottom: 70px;

@@ -24,9 +24,9 @@ const style = {
   top: "50%",
   left: "50%",
   transform: "translate(-50%, -50%)",
-  // backgroundColor: "rgba( 164, 255, 228, 0.35 )",
-  backgroundImage:
-    "radial-gradient( circle farthest-corner at 10% 20%,  rgba(37,145,251,0.98) 0.1%, rgba(0,7,128,1) 99.8% )",
+
+  backgroundImage: "linear-gradient(to top, #628eff 0%, #330867 100%)",
+
   border: "1px solid #282c34",
   borderRadius: 10,
   backdropFilter: "blur( 7px )",
