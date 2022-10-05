@@ -1,14 +1,11 @@
-## Todo App 
+## Movie Store 
 ---
 <p>
-  It’s a list of tasks you need to complete or things that you want to do. 
+  Movie Store is app which enables you to read Details about particular movies or series.
 </p>
 
-* [Click Here](https://todo-chi-silk.vercel.app/) to view the deployed website.
+* [Click Here](https://movie-store-psi.vercel.app/) to view the deployed website.
 
-<p>
-The goal of this app is to help us become more aware of how we spend time in the process of doing those tasks and how productive that time is. It can help set some constraints on social media to reduce distraction and track the time we spend working on the todo items. When we have a better sense of the estimated time we’ll need to spend on our tasks, along with the validated time spent on the items for reference or personal/team reviews, we are able to manage our daily routines more efficiently.
-</p>
 
 
 ### Tech-Stack
@@ -22,7 +19,8 @@ ___
 ___
 * Pagination
 * You Can Search by Movie or Series Name
-* You Can F
+* You Can Filter by Genre
+* You Can Read More Details about particular Movie or Series
 * Responsive App
 
 ### Screenshots
